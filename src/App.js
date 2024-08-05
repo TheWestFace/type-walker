@@ -1,4 +1,6 @@
-import RestartButton from "./components/RestartButton.tsx";
+import React from "react";
+import RestartButton from "./components/RestartButton.js";
+import Results from "./components/Results.js";
 
 const words = "Mat22";
 
@@ -10,7 +12,13 @@ function App() {
     <RestartButton
       className="mx-auto mt-10 text-slate-500"
       onRestart={() => null}
-    />;
+    />
+    <Results
+        className="mt-10"
+        errors={10}
+        accuracyPercentage={100}
+        total={200}
+      />;
     </>
   )
 }
