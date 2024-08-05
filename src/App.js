@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import RestartButton from "./components/RestartButton.tsx";
+
+const words = "Mat22";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+    <CountdownTimer timeLeft={30} />
+    <GeneratedWords words={words} />
+    <RestartButton
+      className="mx-auto mt-10 text-slate-500"
+      onRestart={() => null}
+    />;
+    </>
+  )
+}
+
+const GeneratedWords = ({ words }) => {
+  return <div className="text-4xl text-center text-slate-500">{words}</div>;
+}
+
+const CountdownTimer = ({ timeLeft }) => {
+  return <h2 className="text-blue-400 font-medium">Time: {timeLeft}</h2>;
 }
 
 export default App;
