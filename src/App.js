@@ -9,10 +9,10 @@ function App() {
   return (
     <>
     <CountdownTimer timeLeft={30} />
-    <div className="relative max-w-xl mt-3 text-3xl leading-relaxed break-all">
+    <WordsContainer>
       <GeneratedWords words ={words} />
       <UserTypings className="absolute inset-0" userInput={words} />
-    </div>
+    </WordsContainer>
     <RestartButton
       className="mx-auto mt-10 text-slate-500"
       onRestart={() => null}
@@ -26,6 +26,14 @@ function App() {
     </>
   )
 }
+
+const WordsContainer = ({ children }) => {
+  return (
+    <div className="relative text-3xl max-w-xl leading-relaxed break-all mt-3">
+      {children}
+    </div>
+  );
+};
 
 const GeneratedWords = ({ words }) => {
   return <div className="text-slate-500">{words}</div>;
