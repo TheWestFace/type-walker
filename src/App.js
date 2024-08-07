@@ -1,6 +1,7 @@
 import React from "react";
 import RestartButton from "./components/RestartButton.js";
 import Results from "./components/Results.js";
+import UserTypings from "./components/UserTypings.js";
 
 const words = "Mat22";
 
@@ -8,7 +9,10 @@ function App() {
   return (
     <>
     <CountdownTimer timeLeft={30} />
-    <GeneratedWords words={words} />
+    <div className="relative max-w-xl mt-3 text-3xl leading-relaxed break-all">
+      <GeneratedWords words ={words} />
+      <UserTypings className="absolute inset-0" userInput={words} />
+    </div>
     <RestartButton
       className="mx-auto mt-10 text-slate-500"
       onRestart={() => null}
@@ -24,7 +28,7 @@ function App() {
 }
 
 const GeneratedWords = ({ words }) => {
-  return <div className="text-4xl text-center text-slate-500">{words}</div>;
+  return <div className="text-slate-500">{words}</div>;
 }
 
 const CountdownTimer = ({ timeLeft }) => {

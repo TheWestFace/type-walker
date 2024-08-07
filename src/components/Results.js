@@ -14,7 +14,7 @@ const Results = ({ errors, accuracyPercentage, total, className = "" }) => {
       <motion.li
         initial={initial}
         animate={animate}
-        // transition={{ duration: 0.3 }}
+        transition={{ duration: 0.3 }}
         className="text-xl font-semibold"
       >
         Results
@@ -22,14 +22,14 @@ const Results = ({ errors, accuracyPercentage, total, className = "" }) => {
       <motion.li
         initial={initial}
         animate={animate}
-        // transition={{ duration: 0.3, delay: 0.5 }}
+        transition={{ duration: 0.3, delay: 0.5 }}
       >
-        Accuracy: {accuracyPercentage}
+        Accuracy: {formatPercentage(accuracyPercentage)}
       </motion.li>
       <motion.li
         initial={initial}
         animate={animate}
-        // transition={{ duration: 0.3, delay: 1 }}
+        transition={{ duration: 0.3, delay: 1 }}
         className="text-red-500"
       >
         Errors: {errors}
@@ -37,7 +37,7 @@ const Results = ({ errors, accuracyPercentage, total, className = "" }) => {
       <motion.li
         initial={initial}
         animate={animate}
-        // transition={{ duration: 0.3, delay: 1.4 }}
+        transition={{ duration: 0.3, delay: 1.4 }}
       >
         Typed: {total}
       </motion.li>
